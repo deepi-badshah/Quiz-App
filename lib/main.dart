@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:second_app/result.dart';
 import './quiz.dart';
-import './result.dart';
 
 void main() {
   runApp(_MyApp());
@@ -10,7 +9,6 @@ void main() {
 class _MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return MyAppState();
   }
 }
@@ -30,21 +28,21 @@ class MyAppState extends State<_MyApp> {
       ],
     },
     {
-      'questionText': 'Who\'s your best friend ',
+      'questionText': 'What\'s your dream car?',
       'answers': [
-        {'text': 'Smarudhi', 'score': 3},
-        {'text': 'Sakshi', 'score': 7},
-        {'text': 'Smita', 'score': 9},
-        {'text': 'Deepu', 'score': 1},
+        {'text': 'Tesla', 'score': 3},
+        {'text': 'Mahindra Jeep', 'score': 7},
+        {'text': 'Maruti 800', 'score': 9},
+        {'text': 'Dugati', 'score': 1},
       ],
     },
     {
-      'questionText': 'What\'s your nick name ',
+      'questionText': 'Who\'s your favourite singer?',
       'answers': [
-        {'text': 'Bhuchaal', 'score': 1},
-        {'text': 'Chipkali', 'score': 7},
-        {'text': 'Nagin', 'score': 9},
-        {'text': 'Shristi', 'score': 3},
+        {'text': 'Arijit Singh', 'score': 1},
+        {'text': 'Darshan Raval', 'score': 7},
+        {'text': 'Jubin Nautiyal', 'score': 9},
+        {'text': 'B Praak', 'score': 3},
       ],
     },
   ];
@@ -57,11 +55,6 @@ class MyAppState extends State<_MyApp> {
 
   void _answerQuestion(int score) {
     _totalScore += score;
-    if (_questionIndex < _questions.length) {
-      print('We have more questions');
-    } else {
-      print('Nomore questions! ');
-    }
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
@@ -70,6 +63,7 @@ class MyAppState extends State<_MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text('Hello, Im Deepanshu'),
