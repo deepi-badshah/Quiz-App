@@ -9,13 +9,13 @@ class Result extends StatelessWidget {
   String get resultPhrase {
     String resultText;
     if (resultScore <= 8) {
-      resultText = 'You are awesome and very innocent ';
+      resultText = 'You are Amazing ';
     } else if (resultScore <= 12) {
-      resultText = ' Pretty Awesome!';
+      resultText = 'Literally, A great choice!!';
     } else if (resultScore <= 16) {
-      resultText = 'Literally, You are strange!!';
+      resultText = 'Pretty Awesome!!';
     } else {
-      resultText = 'Are you crazy..!!' + 'So bad';
+      resultText = 'Are you crazy..!!';
     }
     return resultText;
   }
@@ -33,7 +33,7 @@ class Result extends StatelessWidget {
           TextButton(
             child: Text('Restart Quiz!'),
             onPressed: resetHandler,
-            style: TextButton.styleFrom(foregroundColor: Colors.lightBlue),
+            style: TextButton.styleFrom(foregroundColor: Colors.orange),
           )
         ],
       ),

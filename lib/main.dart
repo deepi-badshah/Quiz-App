@@ -66,7 +66,9 @@ class MyAppState extends State<_MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Hello, Im Deepanshu'),
+          title: Text('Hello, Welcome to the Quiz'),
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.orange,
         ),
         body: _questionIndex < _questions.length
             ? Quiz(
@@ -75,6 +77,16 @@ class MyAppState extends State<_MyApp> {
                 questions: _questions,
               )
             : Result(_totalScore, _resetQuiz),
+        floatingActionButton: FloatingActionButton(
+          onPressed: _resetQuiz,
+          backgroundColor: Colors.orange,
+          elevation: 20,
+          child: Text(
+            "Restart",
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+        ),
       ),
     );
   }
